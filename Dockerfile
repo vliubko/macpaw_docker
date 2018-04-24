@@ -6,18 +6,20 @@ LABEL maintainer="vliubko@student.unit.ua"
 RUN		apt-get update -y
 RUN		apt-get install -y zip unzip logrotate
 RUN		apt-get install -y vim
+RUN		pip install Flask
 
 # exposing port 80
 EXPOSE 80/tcp
 
+# Task to change config files. Two methods below
+
+# method #1: using sed replace
 # set correct application at uwsgi.ini file to remove Internal Server Error
 RUN		sed -i "s|wsgi-file=/app/wrong.py|wsgi-file=/app/main.py |g" /app/uwsgi.ini
 
+# method #2: using Dockerfile COPY
 # change domain from localhost to internship.macpaw.io at nginx.conf file
-RUN		sed -i "s|server_name localhost;|server_name internship.macpaw.io;|g" /etc/nginx/conf.d/nginx.conf
+COPY	nginx.conf /etc/nginx/conf.d/
 
-
-
-
-
-
+COPY	main.py /app/
+COPY	index.html /app
