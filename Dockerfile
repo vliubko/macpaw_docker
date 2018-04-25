@@ -23,3 +23,16 @@ COPY	nginx.conf /etc/nginx/conf.d/
 
 COPY	main.py /app/
 COPY	index.html /app
+
+# var="$(cat /var/log/nginx/old.log | grep -v "status=200" | awk -F " " {'{print $8}'} | cut -d "=" -f2 | wc -l)"
+# echo $var
+# cat /var/log/nginx/old.log | grep -v "status=200" | awk -F " " {'{print $8}'} | cut -d "=" -f2 | wc -l
+# 706
+
+# cat /var/log/nginx/old.log | grep "remote_addr=8.8.8.8" | wc -l
+# 790
+
+# curl -v --silent hint.macpaw.io 2>&1 | grep "ETag:" | awk '{print substr($0,10,2)}'
+# 51
+
+# 706+387 = 1093
