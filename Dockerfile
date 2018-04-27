@@ -26,7 +26,7 @@ COPY 	index.html /app
 
 # 6) finding password for zip file
 
-# you can find zip password in file /app/zip_pass.txt
+# you can find zip password in container in file /app/zip_pass.txt
 COPY	zip_pass_vliubko.sh /
 RUN 	chmod +x /zip_pass_vliubko.sh
 RUN 	/zip_pass_vliubko.sh
@@ -43,6 +43,6 @@ COPY	logrotate.d/logrotate_dpkg /etc/logrotate.d
 # debug logrotate and force run logrotate
 RUN		logrotate -d /etc/logrotate.d/ ; logrotate -v -f /etc/logrotate.d/ 2>/dev/null
 
-# 8) create application, shows IP address at internship.macpaw.io/ip
+# 8,9) create application, shows IP address at internship.macpaw.io/ip
 
 COPY	main.py /app/
