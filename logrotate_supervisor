@@ -1,0 +1,17 @@
+/var/log/supervisor/supervisord.log {
+        daily		
+        missingok	
+        rotate 45	
+        compress	
+        delaycompress
+        notifempty	
+        create		
+}
+
+# daily log rotation
+# missing file not an error
+# history saved for 45 days
+# rotated logs are compressed
+# rotating file not compressed, other - compressed
+# do not rotate empty files
+# create new file with old chmod, user, group

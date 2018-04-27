@@ -1,0 +1,17 @@
+/var/log/dpkg.log {
+        monthly		
+        missingok	
+        rotate 12	
+        compress	
+        delaycompress
+        notifempty	
+        create		
+}
+
+# weekly log rotation
+# missing file not an error
+# history saved for 6 weeks
+# rotated logs are compressed
+# rotating file not compressed, other - compressed
+# do not rotate empty files
+# create new file with old chmod, user, group
