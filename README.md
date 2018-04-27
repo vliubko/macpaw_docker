@@ -2,7 +2,9 @@
 
 ## Dockerfile build
 
-Please, clone this repository and build your Dockerfile <br>
+Please, clone this repository and build your Dockerfile
+
+
 `git clone bla-bla.com vliubko_task`
 
 `cd vliubko_task`
@@ -11,7 +13,9 @@ Please, clone this repository and build your Dockerfile <br>
 
 ## Docker container run
 
-You can run this container with command <br>
+You can run this container with command
+
+
 `docker run --rm --name vliubko_task -d -p 80:80 vliubko_task_image`
 
 ## What's happening
