@@ -5,7 +5,7 @@
 Please, clone this repository and build your Dockerfile
 
 
-`git clone https://vliubko@bitbucket.org/vliubko/macpaw_docker.git vliubko_task`
+`git clone https://github.com/vliubko/macpaw_docker.git vliubko_task`
 
 `cd vliubko_task`
 
